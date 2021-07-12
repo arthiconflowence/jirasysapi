@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd  http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
+    <flow name="jira-sys-api_jira-sys-api-main">
+        <http:listener config-ref="jira-sys-api-httpListenerConfig" path="${jira-sys-api.http-listener.path}">
+            <http:response statusCode="#[vars.httpStatus default 200]" />
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+            </http:error-response>
+        </http:listener>
+        <apikit:router config-ref="jira-sys-api-config" />
+    </flow>
+    <flow name="jira-sys-api_jira-sys-api-console">
+        <http:listener config-ref="jira-sys-api-httpListenerConfig" path="/console/*">
+            <http:response statusCode="#[vars.httpStatus default 200]" />
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+            </http:error-response>
+        </http:listener>
+        <apikit:console config-ref="jira-sys-api-config" />
+    </flow>
+     <flow name="post:\issue:application\json:jira-sys-api-config">
+		<flow-ref doc:name="issue_post-issue" doc:id="5d691dce-060b-40d7-8b02-1ccb61a1f342" name="issue_post-issue"/>
+    </flow>
+     <flow name="get:\issue\(issueId):jira-sys-api-config">
+		<flow-ref doc:name="issue_get-issue" doc:id="70f2b3f4-bf76-4647-ab25-1aaa0813fcdb" name="issue_get-issue"/>
+    </flow>
+</mule>

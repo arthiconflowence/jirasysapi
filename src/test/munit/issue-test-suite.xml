@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="issue-test-suite.xml" />
+	<munit:test name="issue-test-suite-post:\issue:application\json:jira-sys-api-configTest" doc:id="b59e84d7-b5a6-4839-9ff3-997b293cff05" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="00f4784b-0746-49e3-aa09-115c6aab5eb2" >
+				<munit:payload value="#[readUrl('classpath://transforms/examples/issue-create-mock-payload.dwl')]" />
+				<munit:attributes value="#[{uriParams : {'issueId' :p('munit.issueId')}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to post:\issue:application\json:jira-sys-api-config" doc:id="32cfcf8c-fec5-4799-a242-65cbf281e9ba" name="post:\issue:application\json:jira-sys-api-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="df96545b-b8f5-4d0f-9879-976ec72785e2" message="${munit.message}" expression="#[payload.id]" is="#[MunitTools::notNullValue()]"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="issue-test-suite-bad-request-post:\issue:application\json:jira-sys-api-configTest1" doc:id="ddd204f5-498f-456b-8680-0ac709f35284" description="Test" expectedErrorType="HTTP:BAD_REQUEST">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="a7090b75-2d22-4ce2-b482-3002b4248df9" >
+				<munit:payload value="#[readUrl('classpath://transforms/examples/issue-create-bad-req-mock-payload.dwl')]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to post:\issue:application\json:jira-sys-api-config" doc:id="58af0c55-67e6-48e5-a504-a9e1b04dadf0" name="post:\issue:application\json:jira-sys-api-config"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="issue-test-suite-get:\issue\(issueId):jira-sys-api-configTest" doc:id="bc695ec5-81f8-4a25-8c3d-269b5eb70949" description="Test">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="b6d63ca7-78fc-447e-ba1d-123c7d52219a" >
+				<munit:attributes value="#[{uriParams : {'issueId' :p('munit.issueId')}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to get:\issue\(issueId):jira-sys-api-config" doc:id="1df23c87-5015-467b-a719-0cafc0f43344" name="get:\issue\(issueId):jira-sys-api-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="89759786-411d-43b2-a24e-11a05f81f28a" is="#[MunitTools::notNullValue()]" expression="#[payload.sfdcCaseId]" message="${munit.message}"/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="issue-test-suite-get:\issue\(issueId):jira-sys-api-configTest1-invalidURIParam" doc:id="38bd414e-a479-4eb8-9077-6ddf1452fdd1" description="Test" expectedErrorType="HTTP:NOT_FOUND">
+		<munit:execution >
+			<munit:set-event doc:name="Set Event" doc:id="b4776ec6-df02-4d27-92e4-3816f626f110" >
+				<munit:attributes value="#[{uriParams : {'issueId' :'ABDND'}}]" />
+			</munit:set-event>
+			<flow-ref doc:name="Flow-ref to get:\issue\(issueId):jira-sys-api-config" doc:id="0a4df3cc-88d2-4585-95b3-2b849015beb8" name="get:\issue\(issueId):jira-sys-api-config"/>
+		</munit:execution>
+	</munit:test>
+
+</mule>

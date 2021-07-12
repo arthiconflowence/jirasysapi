@@ -1,0 +1,2 @@
+jira-auth:
+  token: "jira auth token overridden at deploy time"

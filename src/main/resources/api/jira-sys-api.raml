@@ -1,0 +1,51 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/91f873c2-b134-47ea-900d-b6f6f04eb823/ # 
+title: jira-sys-api
+description: System API for working with JIRA APIs
+version: v1
+mediaType: application/json
+
+uses: 
+  lib: exchange_modules/997d5e99-287f-4f68-bc95-ed435d7c5797/catalyst-library/1.0.45/catalyst-library.raml
+
+types:
+  issueQueryResponse: !include exchange_modules/997d5e99-287f-4f68-bc95-ed435d7c5797/jira-issue-datatype/1.0.3/jira-issue-query-response-datatype.raml
+  issueCreateResponse: !include exchange_modules/997d5e99-287f-4f68-bc95-ed435d7c5797/jira-issue-datatype/1.0.3/jira-issue-create-response-datatype.raml
+
+
+  
+
+securedBy: [ lib.basicAuthSecurity ]
+/issue:
+    displayName: Create Issue
+    post:
+        is:
+         [lib.trackable, lib.returns-400,lib.returns-404,lib.returns-405,lib.returns-406,lib.returns-415,lib.returns-500,lib.returns-501]
+        description: Creates New Issue In JIRA
+        body:
+          application/json:
+            type: lib.issue
+              
+                 
+        responses: 
+            200:
+              body: 
+                application/json:
+                  type: issueCreateResponse
+    /{issueId}:
+      displayName: Get Issue Details
+      get:
+        is:
+         [lib.trackable, lib.returns-400,lib.returns-404,lib.returns-405,lib.returns-406,lib.returns-415,lib.returns-500,lib.returns-501]
+        description: Query Issue Details From JIRA     
+        responses: 
+            200:
+              body: 
+                application/json:
+                  type: issueQueryResponse
+                 
+        
+
+    
+          
+  

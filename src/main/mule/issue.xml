@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	 <flow name="issue_post-issue">
+		<ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd" doc:id="6a880df9-d32c-435c-89b4-a6253d395807" doc:name="Canonical To JIRA API">
+            <ee:message>
+				<ee:set-payload resource="transforms/dwl/jira-issue-request.dwl" />
+            </ee:message>
+        </ee:transform>
+		<logger level="TRACE" doc:name="Before Request" doc:id="c7e8ccae-2926-464f-8c63-7bfd65b75dbc" message="${application-msgs.before-connector-call-message}"/>
+		<until-successful maxRetries="${retry.jira.numRetries}" doc:name="retry Jira API POST" doc:id="720c6d9d-1f48-4dff-9aea-f48bc5d6f19b" millisBetweenRetries="${retry.jira.delayMillisecs}">
+		<http:request method="POST" doc:name="Invoke Jira API POST" doc:id="2f170ffd-8017-4d63-9cd6-c4d94a0f7cdf" config-ref="jira-httpRequestConfig" path="${jira.path}">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Authorization" :"${jira-auth.token}",
+	"Content-Type" : "application/json"
+}]]]></http:headers>
+		</http:request>
+		</until-successful>
+		<logger level="TRACE" doc:name="After Request" doc:id="c5687484-39e9-4c78-921d-dde3a4fb7a74" message="${application-msgs.after-connector-call-message}"/>
+    </flow>
+     <flow name="issue_get-issue">
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" doc:id="1cdf5bd7-22e7-49e5-a8af-7e55667bef49" doc:name="Set Issue Id">
+            <ee:variables>
+                <ee:set-variable variableName="issueId"><![CDATA[attributes.uriParams.'issueId']]></ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+		<logger level="TRACE" doc:name="Before Request" doc:id="881fd7ce-fb43-433f-a007-5f9fa50d7afb" message="${application-msgs.before-connector-call-message}"/>
+		<until-successful maxRetries="${retry.jira.numRetries}" doc:name="retry Jira API GET" doc:id="09a36a74-de51-4524-a2d5-e1c7ff10edfd" millisBetweenRetries="${retry.jira.delayMillisecs}">
+			<http:request method="GET" doc:name="Invoke Jira API GET" doc:id="452fb46c-8108-4de9-876f-aac6d6833464" config-ref="jira-httpRequestConfig" path="#[p('jira.get-issue-path') ++ '/'++ vars.issueId]">
+			<http:headers><![CDATA[#[output application/java
+---
+{
+	"Authorization" :"${jira-auth.token}",
+	"Content-Type" : "application/json"
+}]]]></http:headers>
+		</http:request>	
+		</until-successful>
+		<logger level="TRACE" doc:name="After Request" doc:id="9bb8af9e-0f36-4fbc-b4c7-0ba2dbc30652" message="${application-msgs.after-connector-call-message}"/>
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd" doc:id="748449b7-262b-4c96-8347-e7258a3950b3" doc:name="Map Response">
+            <ee:message>
+				<ee:set-payload resource="transforms/dwl/jira-query-issue-response.dwl" />
+            </ee:message>
+        </ee:transform>
+    </flow>
+	</mule>

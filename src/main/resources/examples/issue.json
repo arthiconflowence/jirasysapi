@@ -1,0 +1,301 @@
+{
+"expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+"id": "10055",
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/issue/10055",
+"key": "AC-56",
+"fields": {
+"statuscategorychangedate": "2019-11-18T12:50:57.706-0500",
+"issuetype": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/issuetype/10004",
+"id": "10004",
+"description": "A problem or error.",
+"iconUrl": "https://muleaccelerator.atlassian.net/secure/viewavatar?size=medium&avatarId=10303&avatarType=issuetype",
+"name": "Bug",
+"subtask": false,
+"avatarId": 10303
+},
+"timespent": null,
+"project": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/project/10000",
+"id": "10000",
+"key": "AC",
+"name": "Accelerator",
+"projectTypeKey": "software",
+"simplified": false,
+"avatarUrls": {
+"48x48": "https://muleaccelerator.atlassian.net/secure/projectavatar?pid=10000&avatarId=10408",
+"24x24": "https://muleaccelerator.atlassian.net/secure/projectavatar?size=small&s=small&pid=10000&avatarId=10408",
+"16x16": "https://muleaccelerator.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10000&avatarId=10408",
+"32x32": "https://muleaccelerator.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10000&avatarId=10408"
+}
+},
+"fixVersions": [],
+"aggregatetimespent": null,
+"resolution": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/resolution/10000",
+"id": "10000",
+"description": "Work has been completed on this issue.",
+"name": "Done"
+},
+"customfield_10027": "5006g000000cBybAAE",
+"resolutiondate": "2019-11-18T12:50:57.702-0500",
+"workratio": -1,
+"watches": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/issue/AC-56/watchers",
+"watchCount": 2,
+"isWatching": true
+},
+"lastViewed": "2019-11-18T12:50:34.234-0500",
+"created": "2019-11-13T18:06:50.756-0500",
+"customfield_10020": null,
+"customfield_10021": null,
+"customfield_10022": "2019-11-13T18:08:22.480-0500",
+"customfield_10023": "10000_*:*_1_*:*_413046975_*|*_10001_*:*_1_*:*_0",
+"priority": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/priority/1",
+"iconUrl": "https://muleaccelerator.atlassian.net/images/icons/priorities/highest.svg",
+"name": "Highest",
+"id": "1"
+},
+"labels": [],
+"customfield_10016": null,
+"customfield_10017": null,
+"customfield_10018": {
+"hasEpicLinkFieldDependency": false,
+"showField": false,
+"nonEditableReason": {
+"reason": "PLUGIN_LICENSE_ERROR",
+"message": "Portfolio for Jira must be licensed for the Parent Link to be available."
+}
+},
+"customfield_10019": "0|i000c7:",
+"aggregatetimeoriginalestimate": null,
+"timeestimate": null,
+"versions": [],
+"issuelinks": [],
+"assignee": null,
+"updated": "2019-11-18T12:52:56.374-0500",
+"status": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/status/10001",
+"description": "",
+"iconUrl": "https://muleaccelerator.atlassian.net/",
+"name": "Done",
+"id": "10001",
+"statusCategory": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/statuscategory/3",
+"id": 3,
+"key": "done",
+"colorName": "green",
+"name": "Done"
+}
+},
+"components": [],
+"timeoriginalestimate": null,
+"description": {
+"version": 1,
+"type": "doc",
+"content": [
+  {
+"type": "paragraph",
+"content": [
+  {
+"type": "text",
+"text": "test jira case"
+}
+]
+}
+]
+},
+"customfield_10010": null,
+"customfield_10014": null,
+"customfield_10015": null,
+"timetracking": {},
+"customfield_10005": null,
+"customfield_10006": null,
+"security": null,
+"customfield_10007": null,
+"customfield_10008": null,
+"attachment": [],
+"aggregatetimeestimate": null,
+"customfield_10009": null,
+"summary": "test jira case",
+"creator": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/user?accountId=5dcc181153136d0de3b3656a",
+"name": "kchakra",
+"key": "kchakra",
+"accountId": "5dcc181153136d0de3b3656a",
+"avatarUrls": {
+"48x48": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=48&s=48",
+"24x24": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=24&s=24",
+"16x16": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=16&s=16",
+"32x32": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=32&s=32"
+},
+"displayName": "kchakra",
+"active": true,
+"timeZone": "America/New_York",
+"accountType": "atlassian"
+},
+"subtasks": [],
+"reporter": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/user?accountId=5dcc181153136d0de3b3656a",
+"name": "kchakra",
+"key": "kchakra",
+"accountId": "5dcc181153136d0de3b3656a",
+"avatarUrls": {
+"48x48": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=48&s=48",
+"24x24": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=24&s=24",
+"16x16": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=16&s=16",
+"32x32": "https://secure.gravatar.com/avatar/18698648208101c1c1df1b08a22358a6?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FK-4.png&size=32&s=32"
+},
+"displayName": "kchakra",
+"active": true,
+"timeZone": "America/New_York",
+"accountType": "atlassian"
+},
+"customfield_10000": "{}",
+"aggregateprogress": {
+"progress": 0,
+"total": 0
+},
+"customfield_10001": null,
+"customfield_10002": null,
+"customfield_10003": null,
+"customfield_10004": null,
+"environment": null,
+"duedate": null,
+"progress": {
+"progress": 0,
+"total": 0
+},
+"comment": {
+"comments": [
+  {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/issue/10055/comment/10003",
+"id": "10003",
+"author": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/user?accountId=5daf818e2fba7b0db2f34ea1",
+"name": "dramalingam",
+"key": "dramalingam",
+"accountId": "5daf818e2fba7b0db2f34ea1",
+"emailAddress": "dramalingam@mulesoft.com",
+"avatarUrls": {
+"48x48": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=48&s=48",
+"24x24": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=24&s=24",
+"16x16": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=16&s=16",
+"32x32": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=32&s=32"
+},
+"displayName": "dramalingam",
+"active": true,
+"timeZone": "America/New_York",
+"accountType": "atlassian"
+},
+"body": {
+"version": 1,
+"type": "doc",
+"content": [
+  {
+"type": "paragraph",
+"content": [
+  {
+"type": "text",
+"text": "Test Comment"
+}
+]
+}
+]
+},
+"updateAuthor": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/user?accountId=5daf818e2fba7b0db2f34ea1",
+"name": "dramalingam",
+"key": "dramalingam",
+"accountId": "5daf818e2fba7b0db2f34ea1",
+"emailAddress": "dramalingam@mulesoft.com",
+"avatarUrls": {
+"48x48": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=48&s=48",
+"24x24": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=24&s=24",
+"16x16": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=16&s=16",
+"32x32": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=32&s=32"
+},
+"displayName": "dramalingam",
+"active": true,
+"timeZone": "America/New_York",
+"accountType": "atlassian"
+},
+"created": "2019-11-13T18:08:22.480-0500",
+"updated": "2019-11-13T18:08:22.480-0500",
+"jsdPublic": true
+},
+  {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/issue/10055/comment/10004",
+"id": "10004",
+"author": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/user?accountId=5daf818e2fba7b0db2f34ea1",
+"name": "dramalingam",
+"key": "dramalingam",
+"accountId": "5daf818e2fba7b0db2f34ea1",
+"emailAddress": "dramalingam@mulesoft.com",
+"avatarUrls": {
+"48x48": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=48&s=48",
+"24x24": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=24&s=24",
+"16x16": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=16&s=16",
+"32x32": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=32&s=32"
+},
+"displayName": "dramalingam",
+"active": true,
+"timeZone": "America/New_York",
+"accountType": "atlassian"
+},
+"body": {
+"version": 1,
+"type": "doc",
+"content": [
+  {
+"type": "paragraph",
+"content": [
+  {
+"type": "text",
+"text": "New Comment"
+}
+]
+}
+]
+},
+"updateAuthor": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/user?accountId=5daf818e2fba7b0db2f34ea1",
+"name": "dramalingam",
+"key": "dramalingam",
+"accountId": "5daf818e2fba7b0db2f34ea1",
+"emailAddress": "dramalingam@mulesoft.com",
+"avatarUrls": {
+"48x48": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=48&s=48",
+"24x24": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=24&s=24",
+"16x16": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=16&s=16",
+"32x32": "https://secure.gravatar.com/avatar/7381884222fb262de6bd87cf36045fcd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FD-5.png&size=32&s=32"
+},
+"displayName": "dramalingam",
+"active": true,
+"timeZone": "America/New_York",
+"accountType": "atlassian"
+},
+"created": "2019-11-18T12:52:56.374-0500",
+"updated": "2019-11-18T12:52:56.374-0500",
+"jsdPublic": true
+}
+],
+"maxResults": 2,
+"total": 2,
+"startAt": 0
+},
+"votes": {
+"self": "https://muleaccelerator.atlassian.net/rest/api/3/issue/AC-56/votes",
+"votes": 0,
+"hasVoted": false
+},
+"worklog": {
+"startAt": 0,
+"maxResults": 20,
+"total": 0,
+"worklogs": []
+}
+}
+}

@@ -1,0 +1,40 @@
+#API Configurations
+jira-sys-api:
+    http-listener:
+      host: "REPLACE_BY_USER"
+      port: "REPLACE_BY_USER"
+      path: "/api/*"
+api:
+  #Replace with respective autodiscovery id
+  autodiscoveryID: "REPLACE_BY_USER"
+#JIRA API Configurations
+jira:
+  #Replace the hostname of the JIRA Instance
+  host: "REPLACE_BY_USER"
+  port: "REPLACE_BY_USER"
+  base-path: "/"
+  response-timeout: "60000"
+  connection-idle-timeout: "3000"
+  http-frequency: "5000"
+  http-reconnection-attempts: "2" 
+  path: "/rest/api/2/issue"
+  get-issue-path: "/rest/api/3/issue"
+#Customize the application messages in the below section
+application-msgs:
+  #Before Connector logger message
+  before-connector-call-message: "Before Connector Call"
+  #After Connector logger message
+  after-connector-call-message: "After Connector Call"
+  #Local Exception logger message
+  local-exception-handler-message: "Exception has occured"
+#MUNIT Message for failed tests
+munit:
+  message: "Test Failed"
+  #Replace with required Test IssueId
+  issueId: "REPLACE_BY_USER"
+
+#retry
+retry:
+   jira: 
+    delayMillisecs: "3000"
+    numRetries: "3"
