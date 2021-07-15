@@ -32,7 +32,7 @@ http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/m
 	
 	<import doc:name="Import-global-common" doc:id="e27585dd-c1ea-4537-841d-97575696a139"
 		file="global-common.xml" />
-	<import doc:name="Import-common-error-handler" doc:id="6f2a69c2-1889-49af-aa18-6433068e3549"
+	<import doc:name="Import-common-error-handler" doc:id="121bda36-ba02-41bf-853d-dc8c00153138"
 		file="common-error-handler.xml" />
 	<global-property doc:name="Global Property" doc:id="a0b3ab88-efd5-4cce-b01c-5468e6fc4939" name="jira-auth.token" value="Basic YXJ0aGlhdHNyQGdtYWlsLmNvbTpsUWlGT0RQUU5oQW50Qm4zZ1QzZkEwRDI=" />
 	
